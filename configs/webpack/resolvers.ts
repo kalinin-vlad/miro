@@ -1,11 +1,12 @@
-import { Configuration } from "webpack";
-import { BuildOptions } from "./types";
+import type { Configuration } from 'webpack'
 
-export const resolvers = ({
-  paths,
-}: BuildOptions): Configuration["resolve"] => ({
-  extensions: [".tsx", ".ts", ".js"],
-  alias: {
-    "@/*": paths.src,
-  },
-});
+import type { BuildOptions } from './types'
+
+export const resolvers = ({ paths }: BuildOptions): Configuration['resolve'] => {
+  return {
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@/*': paths.src,
+    },
+  }
+}

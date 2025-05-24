@@ -1,12 +1,13 @@
-import { ModuleOptions } from "webpack";
-import { BuildOptions } from "./types";
+import type { ModuleOptions } from 'webpack'
 
-export const loaders = (options?: BuildOptions): ModuleOptions["rules"] => {
+import type { BuildOptions } from './types'
+
+export function loaders(options?: BuildOptions): ModuleOptions['rules'] {
   const tsLoader = {
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: 'ts-loader',
     exclude: /node_modules/,
-  };
+  }
 
-  return [tsLoader];
-};
+  return [tsLoader]
+}

@@ -1,19 +1,21 @@
-import webpack from "webpack";
-import { devServer } from "./devServer";
-import { plugins } from "./plugins";
-import { loaders } from "./loaders";
-import { resolvers } from "./resolvers";
-import { BuildOptions } from "./types";
+import type webpack from 'webpack'
+
+import type { BuildOptions } from './types'
+
+import { plugins } from './plugins'
+import { loaders } from './loaders'
+import { devServer } from './devServer'
+import { resolvers } from './resolvers'
 
 export const buildWebpack = (options: BuildOptions): webpack.Configuration => {
-  const { mode, paths } = options;
+  const { mode, paths } = options
 
   return {
-    mode: mode ?? "development",
+    mode: mode ?? 'development',
     entry: paths.entry,
     output: {
       path: paths.output,
-      filename: "[name].[contenthash].js",
+      filename: '[name].[contenthash].js',
       clean: true,
     },
 
@@ -21,5 +23,5 @@ export const buildWebpack = (options: BuildOptions): webpack.Configuration => {
     devServer: devServer(options),
     plugins: plugins(options),
     resolve: resolvers(options),
-  };
-};
+  }
+}
