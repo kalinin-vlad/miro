@@ -1,5 +1,6 @@
 import ESlintPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import type { Configuration } from 'webpack'
 
@@ -13,10 +14,8 @@ export const plugins = ({ paths, mode }: BuildOptions): Configuration['plugins']
     new ESlintPlugin(),
   ]
 
-  if (mode === 'development') {
-  }
-
   if (mode === 'production') {
+    plugins.push(new MiniCssExtractPlugin())
   }
 
   return plugins

@@ -18,7 +18,6 @@ export const buildWebpack = (options: BuildOptions): webpack.Configuration => {
       filename: '[name].[contenthash].js',
       clean: true,
     },
-
     module: { rules: loaders(options) },
     devServer: devServer(options),
     plugins: plugins(options),
