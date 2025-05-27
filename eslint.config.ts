@@ -1,5 +1,6 @@
 import antfu from '@antfu/eslint-config'
 import pluginReact from 'eslint-plugin-react'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default antfu({
   react: true,
@@ -7,8 +8,12 @@ export default antfu({
   jsonc: false,
   jsx: true,
   ignores: ['build/**/*'],
-  plugins: { pluginReact },
+  plugins: {
+    pluginReact,
+    pluginQuery,
+  },
   rules: {
+    'style/comma-dangle': ['warn', 'only-multiline'],
     'pluginReact/function-component-definition': [
       'error',
       {
