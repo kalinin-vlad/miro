@@ -30,7 +30,11 @@ export const loaders = (options: BuildOptions): ModuleOptions['rules'] => {
 
   const scssLoader = {
     test: /\.s[ac]ss$/i,
-    use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      'css-loader',
+      'sass-loader',
+    ],
   }
 
   const tsLoader = {
@@ -39,5 +43,10 @@ export const loaders = (options: BuildOptions): ModuleOptions['rules'] => {
     exclude: /node_modules/,
   }
 
-  return [assetLoader, scssLoader, tsLoader, svgrLoader]
+  const yamlLoader = {
+    test: /\.yaml$/,
+    use: 'yaml-loader',
+  }
+
+  return [assetLoader, scssLoader, tsLoader, svgrLoader, yamlLoader]
 }

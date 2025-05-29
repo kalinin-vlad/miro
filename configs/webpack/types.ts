@@ -1,5 +1,6 @@
 export interface Paths {
   output: string
+  public: string
   entry: string
   html: string
   src: string

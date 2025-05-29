@@ -15,6 +15,7 @@ const PATHS: Paths = {
   output: path.resolve(__dirname, 'build'),
   entry: path.resolve(__dirname, 'src/app', 'index.tsx'),
   html: path.resolve(__dirname, 'public', 'index.html'),
+  public: path.resolve(__dirname, 'public'),
 }
 
 export default (env: EnvVariables) =>

@@ -5,12 +5,13 @@ import type { BuildOptions } from './types'
 export const devServer = ({
   port,
   paths,
+  mode,
 }: BuildOptions): DevServerConfiguration => {
   return {
     port: port ?? '3000',
     open: true,
     static: {
-      directory: paths.output,
+      directory: mode === 'production' ? paths.output : paths.public,
     },
     compress: true,
     historyApiFallback: true,

@@ -8,7 +8,9 @@
     "build:prod": "webpack --env mode=production",
     "start": "webpack serve",
     "lint": "eslint --config eslint.config.ts .",
-    "lint:fix": "eslint --config eslint.config.ts . --fix"
+    "lint:fix": "eslint --config eslint.config.ts . --fix",
+    "api": "npx openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.ts",
+    "msw": "npx msw init public --save"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "@svgr/webpack": "^8.1.0",
     "@tanstack/eslint-plugin-query": "^5.78.0",
     "@tanstack/router-plugin": "^1.120.11",
+    "@types/dotenv-webpack": "^7.0.8",
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
@@ -26,6 +29,7 @@
     "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.1",
     "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.0",
     "eslint": "^9.27.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -35,6 +39,9 @@
     "html-webpack-plugin": "^5.6.3",
     "jiti": "^2.4.2",
     "mini-css-extract-plugin": "^2.9.2",
+    "msw": "~2.7.5",
+    "openapi-msw": "^1.2.0",
+    "openapi-typescript": "^7.8.0",
     "prettier": "^3.5.3",
     "sass": "^1.89.0",
     "sass-loader": "^16.0.5",
@@ -45,14 +52,22 @@
     "webpack": "^5.99.9",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.1",
+    "yaml-loader": "^0.8.1"
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.13.2",
     "@tanstack/react-query": "^5.77.2",
     "@tanstack/react-router": "^1.120.11",
     "@tanstack/react-router-devtools": "^1.120.11",
+    "openapi-fetch": "^0.14.0",
+    "openapi-react-query": "^0.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

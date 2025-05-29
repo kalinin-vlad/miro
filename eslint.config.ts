@@ -13,7 +13,10 @@ export default antfu({
     pluginQuery,
   },
   rules: {
+    'style/brace-style': ['error', '1tbs'],
+    'style/arrow-parens': ['error', 'always'],
     'style/comma-dangle': ['warn', 'only-multiline'],
+    'node/prefer-global/process': ['error', 'always'],
     'pluginReact/function-component-definition': [
       'error',
       {

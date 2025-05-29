@@ -1,33 +1,21 @@
 import { Link } from '@tanstack/react-router'
 
 import { ROUTES } from '@/shared/model/routes'
-
-const linkArr = [
-  {
-    id: 1,
-    label: 'link-1',
-  },
-  {
-    id: 2,
-    label: 'link-2',
-  },
-  {
-    id: 3,
-    label: 'link-3',
-  },
-]
+import { rqClient } from '@/shared/api/instance'
 
 const Boards = () => {
+  const { data } = rqClient.useQuery('get', '/boards')
+
   return (
     <>
       <h2>Boards List</h2>
-      {linkArr.map(({ id, label }) => (
+      {data?.map(({ id, name }) => (
         <Link
           key={id}
           to={ROUTES.BOARD}
-          params={{ boardId: label }}
+          params={{ boardId: id }}
         >
-          {label}
+          {name}
         </Link>
       ))}
     </>

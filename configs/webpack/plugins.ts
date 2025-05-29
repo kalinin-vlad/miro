@@ -1,3 +1,4 @@
+import Dotenv from 'dotenv-webpack'
 import ESlintPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -17,6 +18,9 @@ export const plugins = ({
       template: paths.html,
     }),
     new ESlintPlugin(),
+    new Dotenv({
+      path: `.env.${mode}`,
+    }),
   ]
 
   if (mode === 'production') {
