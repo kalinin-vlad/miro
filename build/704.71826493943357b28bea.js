@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmiro_clone=self.webpackChunkmiro_clone||[]).push([[704],{704:(e,r,n)=>{n.r(r),n.d(r,{default:()=>t});var c=n(848),s=n(681);const t=function(){return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)("h2",{children:"Board Page"}),(0,c.jsx)(s.N_,{to:"..",children:"return"})]})}}}]);

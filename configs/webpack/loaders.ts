@@ -28,12 +28,12 @@ export const loaders = (options: BuildOptions): ModuleOptions['rules'] => {
     ],
   }
 
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
+  const cssLoader = {
+    test: /\.css$/i,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       'css-loader',
-      'sass-loader',
+      'postcss-loader',
     ],
   }
 
@@ -43,10 +43,5 @@ export const loaders = (options: BuildOptions): ModuleOptions['rules'] => {
     exclude: /node_modules/,
   }
 
-  const yamlLoader = {
-    test: /\.yaml$/,
-    use: 'yaml-loader',
-  }
-
-  return [assetLoader, scssLoader, tsLoader, svgrLoader, yamlLoader]
+  return [assetLoader, cssLoader, tsLoader, svgrLoader]
 }
