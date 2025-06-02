@@ -13,6 +13,14 @@ export default antfu({
     pluginQuery,
   },
   rules: {
+    'react/jsx-wrap-multilines': [
+      'error',
+      {
+        declaration: true,
+        assignment: true,
+        return: true,
+      },
+    ],
     'style/brace-style': ['error', '1tbs'],
     'style/arrow-parens': ['error', 'always'],
     'style/comma-dangle': ['warn', 'only-multiline'],

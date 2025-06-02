@@ -10,6 +10,8 @@ import { ROUTES } from '@/shared/model/routes'
 
 import App from './App'
 import { Providers } from './providers'
+import LoginPage from '@/pages/auth/login.page'
+import RegisterPage from '@/pages/auth/register.page'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -28,11 +30,13 @@ const indexRoute = createRoute({
 const loginRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: ROUTES.LOGIN,
+  component: LoginPage,
 })
 
 const registerRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: ROUTES.REGISTER,
+  component: RegisterPage,
 })
 
 const boardsRoute = createRoute({
