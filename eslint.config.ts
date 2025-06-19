@@ -7,7 +7,7 @@ export default antfu({
   typescript: true,
   jsonc: false,
   jsx: true,
-  ignores: ['build/**/*'],
+  ignores: ['build/**/*', 'public/mockServiceWorker.js'],
   plugins: {
     pluginReact,
     pluginQuery,
